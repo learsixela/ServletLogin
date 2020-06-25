@@ -55,15 +55,23 @@ public class Login extends HttpServlet {
 	        if(nombre.equals(nombre_session) && sPass.equals(pass_session)) {
 	        	doGet(request, response);
 	        }else {
-	        	salida.println("<h1>Error en el Login</h1>");
+	        	mensajeSalida(salida,"<h1>Error en el Login</h1>");
 	        }
 		}else {
-			salida.println("<h1>Error debe ingresar ambos parametros</h1>");
+			mensajeSalida(salida,"<h1>Error debe ingresar ambos parametros</h1>");
 		}
 		
-
-        
+	}
+	
+	public PrintWriter mensajeSalida(PrintWriter salida, String mensaje) {
+        salida.println("<HTML><HEAD><TITLE>");
+	    salida.println("title");
+	    salida.println("</TITLE></HEAD><BODY>");
+        salida.println(mensaje);
+        salida.println("</BODY></HTML>");
+        salida.close();
 		
+		return salida;
 	}
 
 }
