@@ -16,7 +16,7 @@
 		<div class="container">
 			<div class="row vh-100">
 				<div class="col-md-4 mx-auto d-flex align-items-center">
-					<div class="card bg-light mb-3 shadow-lg" style="max-width: 18rem;">
+					<div class="card bg-light mb-3 shadow-lg">
 						<div class="card-header">Login</div>
 						<div class="card-body">
 							<form action="Login" method="POST">
