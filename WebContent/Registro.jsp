@@ -9,11 +9,11 @@
 <body>
 	<form action="Registro" method="GET">
 	
-	Nombre: <input type="text" value="" name="nombre"> <br>
+	<label>Nombre</label><input type="text" value="" name="nombre"> <br>
 	Rut: <input type="text" value="" name="rut"><br>
 	Password: <input type="password" value="" name="pass"><br>
 	
-	<button type="submit">Logearse</button>
+	<button type="submit">Registrarse</button>
 </form>
 </body>
 </html>
