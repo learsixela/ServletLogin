@@ -7,6 +7,7 @@
 <title>Login</title>
 </head>
 <body>
+<!-- editando vista -->
 	 <form action="Login" method="POST">
     	<h3>Login</h3>
     	<p>Nombre: </p><input type= "text" value="" name="nombre" id="nombre" required="required"> <br>
