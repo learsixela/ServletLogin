@@ -8,7 +8,7 @@ public class Conector {
 
 	private String sServidor = "localhost";
 	private String sUsuario = "root";
-	private String sPassword = "root";
+	private String sPassword = "";
 	private int iPuerto = 3306;
 	private String sServer = "";
 	private String sBaseDatos = "";
@@ -49,4 +49,6 @@ public class Conector {
 		return conexion;
 		
 	}
+	
+	
 }
