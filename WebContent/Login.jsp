@@ -7,9 +7,10 @@
 <title>Login</title>
 </head>
 <body>
-	 <form action="Login" method="POST">
+	 <!-- <form action="Login" method="POST"> -->
+	 <form action="Home" method="POST">
     	<h3>Login</h3>
-    	<p>Nombre: </p><input type= "text" value="" name="nombre" id="nombre" required="required"> <br>
+    	<p> Nombre: </p><input type= "text" value="" name="nombre" id="nombre" required="required"> <br>
     	<p>Password: </p><input type= "password" value="" name="password" id="password"required="required"><br>
         <button type="submit">Login</button>
     </form>

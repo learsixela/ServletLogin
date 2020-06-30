@@ -32,7 +32,8 @@ public class Login extends HttpServlet {
 		    out.println(title);
 		    out.println("</TITLE></HEAD><BODY>");
 		    out.println("<H1>" + title + "</H1>");
-		    out.println("<P>This is output from SimpleServlet.");
+		    out.println("<P>Logeado Correctamente.</p>");
+		    out.println("<a href='/MiServlet/Home'>Home</h1>");
 		    out.println("</BODY></HTML>");
 		    out.close();
 	}

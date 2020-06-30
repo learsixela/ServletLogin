@@ -4,10 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Conector {
-
+public class BaseDatos {
+	
 	private String sServidor = "localhost";
-	private String sUsuario = "israel";
+	private String sUsuario = "israel";//root
 	private String sPassword = "secret";
 	private int iPuerto = 3306;
 	private String sServer = "";
@@ -15,7 +15,9 @@ public class Conector {
 	
 	private static Connection conexion = null;
 	
-	public Conector() {
+	//lo utilizaremos a priori
+	
+	public BaseDatos() {
 		super();
 	}
 
@@ -28,7 +30,6 @@ public class Conector {
 		
 		//registremos el driver mysql
 		try {
-			//Class.forName("com.mysql.jdbc.Driver");
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			//e.printStackTrace();

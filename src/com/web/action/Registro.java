@@ -27,10 +27,13 @@ public class Registro extends HttpServlet {
         String nombre = request.getParameter("nombre");
         String rut = request.getParameter("rut");
         String pass = request.getParameter("pass");
+        
         // almacenando al informacion o paramtro en sesion
         session.setAttribute("nombre", nombre);
         session.setAttribute("rut", rut);
         session.setAttribute("pass", pass);
+        
+        
         
         PrintWriter salida = response.getWriter();
         String title = "Registro";
@@ -40,7 +43,7 @@ public class Registro extends HttpServlet {
 	    salida.println("</TITLE></HEAD><BODY>");
         salida.println("<h1>Registro Exitoso</h1>");
         salida.println("<br>");
-        salida.println("<a href='Index.jsp'>Login</h1>");
+        salida.println("<a href='Login.jsp'>Login</h1>");
         salida.println("</BODY></HTML>");
         salida.close();
 	}

@@ -4,16 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Pagina de Registro</title>
 </head>
 <body>
 	<form action="Registro" method="GET">
 	
-	Nombre: <input type="text" value="" name="nombre"> <br>
-	Rut: <input type="text" value="" name="rut"><br>
-	Password: <input type="password" value="" name="pass"><br>
-	
-	<button type="submit">Logearse</button>
-</form>
+		Nombre: <input type="text" value="" name="nombre"> <br>
+		Rut: <input type="text" value="" name="rut"><br>
+		Password: <input type="password" value="" name="pass"><br>
+		
+		<button type="submit">Logearse</button>
+	</form>
 </body>
 </html>
