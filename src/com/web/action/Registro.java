@@ -10,12 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.web.impl.UsuarioMgr;
+import com.web.impl.UsuarioMgrImpl;
+import com.web.model.Usuario;
+import com.web.util.Mensajes;
+
 /**
  * Servlet implementation class Registro
  */
 @WebServlet("/Registro")
 public class Registro extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	Mensajes mensajeSalida = new Mensajes();
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -24,27 +31,27 @@ public class Registro extends HttpServlet {
 
 		HttpSession session = request.getSession();
         //capturando el valor que pasan por url
-        String nombre = request.getParameter("nombre");
-        String rut = request.getParameter("rut");
-        String pass = request.getParameter("pass");
+        String sNombre = request.getParameter("nombre");
+        String sRut = request.getParameter("rut");
+        String sPass = request.getParameter("pass");
         
         // almacenando al informacion o paramtro en sesion
-        session.setAttribute("nombre", nombre);
-        session.setAttribute("rut", rut);
-        session.setAttribute("pass", pass);
+        session.setAttribute("nombre", sNombre);
+        session.setAttribute("rut", sRut);
+        session.setAttribute("pass", sPass);
         
+        Usuario user = new Usuario();
+        user.setsNombre(sNombre);
+        user.setsRut(sRut);
+        user.setsPassword(sPass);
+        UsuarioMgrImpl mgr = new UsuarioMgrImpl();
         
+       @SuppressWarnings("null")
+       String sResultado=  mgr.validarUser(user);
         
         PrintWriter salida = response.getWriter();
-        String title = "Registro";
-        response.setContentType("text/html");
-        salida.println("<HTML><HEAD><TITLE>");
-	    salida.println(title);
-	    salida.println("</TITLE></HEAD><BODY>");
-        salida.println("<h1>Registro Exitoso</h1>");
-        salida.println("<br>");
-        salida.println("<a href='Login.jsp'>Login</h1>");
-        salida.println("</BODY></HTML>");
+      
+        mensajeSalida.mensajeSalidaHome(response, salida, sResultado);
         salida.close();
 	}
 

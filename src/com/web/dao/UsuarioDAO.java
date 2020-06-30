@@ -8,7 +8,7 @@ public interface UsuarioDAO {
 
     public List listar();
     public Usuario list(int id);
-    public boolean add(Usuario per);
+    public String add(Usuario per);
     public boolean edit(Usuario per);
     public boolean eliminar(int id);
 }
