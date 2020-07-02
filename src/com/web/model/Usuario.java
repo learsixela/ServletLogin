@@ -1,24 +1,37 @@
 package com.web.model;
 
 public class Usuario {
-
+	//atributos del objeto
+	int id;
 	String sNombre;
 	String sEmail;
 	String sRut;
 	String sPassword;
 	
+	//constructor vacio
 	public Usuario() {
 		
 	}
 	
-	public Usuario(String sNombre, String sEmail, String sRut, String sPassword) {
+	//constructor con parametros
+	public Usuario(int iId, String sNombre, String sEmail, String sRut, String sPassword) {
 		super();
+		this.id = iId;
 		this.sNombre = sNombre;
 		this.sEmail = sEmail;
 		this.sRut = sRut;
 		this.sPassword = sPassword;
 	}
+	
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	//get y set
 	public String getsNombre() {
 		return sNombre;
 	}

@@ -1,20 +1,15 @@
 <jsp:include page='template/header.jsp'>
-<jsp:param name='title' value='Formulario Registro' />
-<jsp:param name='description' value='Formulario Registro' />
+<jsp:param name='title' value='Nuevo Cliente' />
+<jsp:param name='description' value='Nuevo Cliente' />
 </jsp:include>
 <body>
 	<div class="container-fluid">
-		<div class="card">
-		  <div class="card-header">
-		    Seguritos
-		  </div>
-		  <div class="card-body">
-		    <h5 class="card-title">Bienvenidos</h5>
-		    <p class="card-text">Sistema de gestión en seguridad empresarial.</p>
-		    <a href="Login.jsp" class="btn btn-primary">Login</a>
-		  </div>
-		</div>
-	
+		<form action="Clientes" method="POST">
+			<h3>Crear Nuevo Cliente</h3>
+			<br>
+			<p>Nombre Empresa</p> <input type="text" name="team" id="team" required="required">
+			<button type="submit" class="btn btn-primary btn-sm">Crear</button>
+		</form>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

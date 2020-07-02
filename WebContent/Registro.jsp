@@ -12,13 +12,16 @@
 						<div class="card-body">
 							<form action="Registro" method="GET">
 								<div class="form-group">
-									<label for="">Nombre:</label> <input type="text" value=""
+									<label for="">Nombre:</label> 
+									<input type="text" value=""
 										name="nombre" id="nombre" required="required"
-										class="form-control" placeholder="Ingrese Nombre"> <br>
-									<label for="">Rut:</label> <input type="text" value=""
+										class="form-control" placeholder="Ingrese Nombre"><br>
+									<label for="">Rut:</label> 
+									<input type="text" value=""
 										name="rut" id="rut" required="required"
 										class="form-control" placeholder="Ingrese Password"><br>
-										<label for="">Password:</label> <input type="password" value=""
+										<label for="">Password:</label> 
+										<input type="password" value=""
 										name="pass" id="pass" required="required"
 										class="form-control" placeholder="Ingrese Password"><br>
 									<button class="btn btn-primary float-right" type="submit">Registrarse</button>

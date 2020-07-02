@@ -29,27 +29,29 @@ public class Registro extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		HttpSession session = request.getSession();
+		
         //capturando el valor que pasan por url
         String sNombre = request.getParameter("nombre");
         String sRut = request.getParameter("rut");
         String sPass = request.getParameter("pass");
         
-        // almacenando al informacion o paramtro en sesion
-        session.setAttribute("nombre", sNombre);
-        session.setAttribute("rut", sRut);
-        session.setAttribute("pass", sPass);
+
         
+        //instacia al objeto usuario
         Usuario user = new Usuario();
+        //asigno al objeto las variables
         user.setsNombre(sNombre);
         user.setsRut(sRut);
         user.setsPassword(sPass);
+        user.setsEmail("a@a.cl");
+        
+        //instancia a las clases
         UsuarioMgrImpl mgr = new UsuarioMgrImpl();
         
-       @SuppressWarnings("null")
-       String sResultado=  mgr.validarUser(user);
+        String sResultado=  mgr.validarUser(user);
         
         PrintWriter salida = response.getWriter();
+  
       
         mensajeSalida.mensajeSalidaHome(response, salida, sResultado);
         salida.close();

@@ -13,9 +13,11 @@
 						<div class="card-body">
 							<form action="Login" method="POST">
 								<div class="form-group">
-									<label for="">Nombre:</label> <input type="text" value=""
+									<label for="">Nombre:</label> 
+									<input type="text" value=""
 										name="nombre" id="nombre" required="required"
-										class="form-control" placeholder="Ingrese Nombre"> <br> <label for="">Password:</label>
+										class="form-control" placeholder="Ingrese Nombre"> <br> 
+										<label for="">Password:</label>
 									<input type="password" value="" name="password" id="password"
 										required="required" class="form-control" placeholder="Ingrese Password"><br>
 									<button class="btn btn-primary float-right" type="submit">Login</button>
@@ -25,7 +27,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
 		</div>
 	</main>
 

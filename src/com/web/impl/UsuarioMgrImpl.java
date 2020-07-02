@@ -3,23 +3,50 @@ package com.web.impl;
 import com.web.dao.UsuarioDAOImpl;
 import com.web.model.Usuario;
 
+//logica de negocio
 public class UsuarioMgrImpl implements UsuarioMgr{
-
-	@SuppressWarnings("null")
-	@Override
+	String sMensaje ="";
+	//metodos 
 	public String validarUser(Usuario user) {
+		
 		UsuarioDAOImpl dao = new UsuarioDAOImpl();
 		String sMensaje ="";
-		
-		if(!user.getsNombre().equals("")) {
-			if(!user.getsPassword().equals("")) {
-				user.setsEmail("a@a.cl");
+		//validaciones 
+		if(!user.getsNombre().trim().equals("")) {
+			if(!user.getsPassword().trim().equals("")) {
+				//llamar al metodo del DAO
 				sMensaje= dao.add(user);
+			}else {
+				sMensaje="Debe ingresar password.";
 			}
 		}else {
-			sMensaje="Error al actualizar";
+			sMensaje="Debe ingresar nombre de usuario";
 		}
 		return sMensaje;
+	}
+
+	@Override
+	public Usuario exist(Usuario user) {
+		//instancia clase DAO
+		UsuarioDAOImpl dao = new UsuarioDAOImpl();
+		
+		Usuario usuario = null;
+		//validaciones 
+		if(!user.getsNombre().trim().equals("")) {
+			if(!user.getsPassword().trim().equals("")) {
+				//llamando al metodo del DAO
+				usuario= dao.exist(user);
+			}
+		}
+		
+		return usuario;
+	}
+
+	
+	@Override
+	public String prueba() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

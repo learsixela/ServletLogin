@@ -5,10 +5,14 @@ import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.web.impl.UsuarioMgrImpl;
+import com.web.model.Usuario;
 
 /**
  * Servlet implementation class Login
@@ -21,21 +25,7 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		   	PrintWriter out;
-		    String title = "Bienvenido";
-
-		    // primero selecciona el tipo de contenidos y otros campos de cabecera de la respuesta
-		    response.setContentType("text/html");
-		    // Luego escribe los datos de la respuesta
-		    out = response.getWriter();
-		    out.println("<HTML><HEAD><TITLE>");
-		    out.println(title);
-		    out.println("</TITLE></HEAD><BODY>");
-		    out.println("<H1>" + title + "</H1>");
-		    out.println("<P>Logeado Correctamente.</p>");
-		    out.println("<a href='/MiServlet/Home'>Home</h1>");
-		    out.println("</BODY></HTML>");
-		    out.close();
+		 response.sendRedirect("/MiServlet/Home");
 	}
 
 	/**
@@ -43,23 +33,37 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter salida = response.getWriter();
-        
-		String nombre = request.getParameter("nombre");
+        //capturando lal variables que vienen desde el form login.jsp
+		String sNombre = request.getParameter("nombre");
 		String sPass = request.getParameter("password");
 		
-		if(nombre!= null && sPass != null) {
+		//instancia del objeto
+		Usuario user1 = new Usuario();
+		user1.setsNombre(sNombre);
+		user1.setsPassword(sPass);
+		
+		//instancia a la clase mgrImpl
+		UsuarioMgrImpl mgrImpl = new UsuarioMgrImpl();
+		
+		//llamado al metodo
+		Usuario user = mgrImpl.exist(user1);
+		
+		if(user!= null) {
+			String idUsuario= user.getId()+"";
+			Cookie usuarioCookie = new Cookie("idUsuario",idUsuario);
+
+		    // cookie durante un día
+			usuarioCookie.setMaxAge(60*60*24);
+		    response.addCookie(usuarioCookie);
+		    
+	        // almacenando al informacion o parametro en sesion
 	        HttpSession session = request.getSession();
-	        String nombre_session = (String) session.getAttribute("nombre");
-	        String rut_session = (String) session.getAttribute("rut");
-	        String pass_session = (String) session.getAttribute("pass");
-			
-	        if(nombre.equals(nombre_session) && sPass.equals(pass_session)) {
-	        	doGet(request, response);
-	        }else {
-	        	mensajeSalida(salida,"<h1>Error en el Login</h1>");
-	        }
+	        session.setAttribute("nombre", user.getsNombre());
+	        session.setAttribute("rut", user.getsRut());
+	        session.setAttribute("pass", user.getsPassword());
+	        doGet(request, response);
 		}else {
-			mensajeSalida(salida,"<h1>Error debe ingresar ambos parametros</h1>");
+			mensajeSalida(salida,"<h1>Usuario no existente</h1>");
 		}
 		
 	}

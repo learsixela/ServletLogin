@@ -5,6 +5,8 @@ import com.web.model.Usuario;
 public interface UsuarioMgr {
 
 	String validarUser(Usuario user);
+	Usuario exist(Usuario user);
+	String prueba();
 
 	
 }

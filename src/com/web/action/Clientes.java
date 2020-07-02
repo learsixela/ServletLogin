@@ -8,12 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class Home
+ * Servlet implementation class Clientes
  */
-@WebServlet("/Home")
-public class Home extends HttpServlet {
+@WebServlet("/Clientes")
+public class Clientes extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -21,7 +22,14 @@ public class Home extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//redireccionando
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/view/Home.jsp");
+		RequestDispatcher view;
+		HttpSession session = request.getSession();
+		if(request.getParameter("id")!=null) {
+			view = request.getRequestDispatcher("/WEB-INF/view/Clientes.jsp");
+		}else {
+			view = request.getRequestDispatcher("/WEB-INF/view/NuevoCliente.jsp");
+		}
+		
 		// pasar request, y el response
 		view.forward(request, response);
 	}
@@ -30,7 +38,8 @@ public class Home extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 doGet(request, response);
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

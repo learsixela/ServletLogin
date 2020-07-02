@@ -1,18 +1,33 @@
 <jsp:include page='template/header.jsp'>
-<jsp:param name='title' value='Formulario Registro' />
-<jsp:param name='description' value='Formulario Registro' />
+<jsp:param name='title' value='Home' />
+<jsp:param name='description' value='Home' />
 </jsp:include>
 <body>
 	<div class="container-fluid">
 		<div class="card">
 		  <div class="card-header">
-		    Seguritos
+		    Home
 		  </div>
-		  <div class="card-body">
-		    <h5 class="card-title">Bienvenidos</h5>
-		    <p class="card-text">Sistema de gestión en seguridad empresarial.</p>
-		    <a href="Login.jsp" class="btn btn-primary">Login</a>
-		  </div>
+		  <div class="row">
+			  <div class="col-sm-6">
+			    <div class="card">
+			      <div class="card-body">
+			        <h5 class="card-title">Gestión de Clientes</h5>
+			        <p class="card-text">Agregar, Asociar trabajadores, etc.</p>
+			        <a href="Clientes" class="btn btn-primary">Clientes</a>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col-sm-6">
+			    <div class="card">
+			      <div class="card-body">
+			        <h5 class="card-title">Special title treatment</h5>
+			        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+			        <a href="#" class="btn btn-primary">Go somewhere</a>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 		</div>
 	
 	</div>
