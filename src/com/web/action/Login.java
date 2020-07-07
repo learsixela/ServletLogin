@@ -50,7 +50,7 @@ public class Login extends HttpServlet {
 		
 		//llamado al metodo
 		 user = mgrImpl.exist(user);
-		if(user!= null) {
+ 		if(user!= null) {
 	        // almacenando al informacion o parametro en sesion
 	        HttpSession session = request.getSession();
 	        session.setAttribute("nombre", user.getsNombre());
