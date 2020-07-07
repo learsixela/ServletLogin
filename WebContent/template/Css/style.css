@@ -1,0 +1,70 @@
+
+.fondo-registro-cliente{
+
+  background: linear-gradient(to top,rgba(221, 154, 237,0.5),rgba(82, 196, 223,0.1)),url(Imagenes/fondo.jpg);  
+  height: 100vh;
+  background-size: cover;
+    
+	
+	
+}
+
+.fondo-index{
+	
+background: linear-gradient(to top,rgba(174, 171, 170,0.5),rgba(174, 171, 170,0.5)),url(Imagenes/fondoindex.jpg);  
+  height: 100vh;
+  background-size: cover;
+}
+
+#titulo-index {
+	
+text-align:center;	
+	
+}
+
+#tarjeta-index {
+
+	width:700px;
+	margin-right:auto;
+	margin-left: auto;
+	font-weight:bold;
+	background: linear-gradient(to top,rgba(30, 231, 193 ,1),rgba(82, 196, 223,1));  
+	border-radius: 54px 54px 54px 54px;
+-moz-border-radius: 54px 54px 54px 54px;
+-webkit-border-radius: 54px 54px 54px 54px;
+border: 3px solid #080C0B;
+}
+
+
+.fondo-login{
+	
+	background: linear-gradient(to top,rgba(174, 171, 170,0.5),rgba(174, 171, 170,0.5)),url(Imagenes/fondologin1.jpg);  
+	
+}
+
+.fondo-login h1 {
+	
+padding-top:40px;
+color: white;
+margin:0px;	
+	
+}
+
+
+
+.fondo-home  {
+  background: linear-gradient(to top,rgba(221, 154, 237,0.9),rgba(82, 196, 223,0.7)),url(Imagenes/fondohome.jpg);  
+  height: 100vh;
+  background-size: cover;
+  
+  }
+  
+  
+  .fondo-home h1  {
+	padding-top:40px;
+	color: black;
+	margin:0px;	
+	text-align:center;
+	font-size:60px;
+	
+  }

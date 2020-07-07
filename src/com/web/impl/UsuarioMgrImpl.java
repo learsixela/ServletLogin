@@ -43,11 +43,7 @@ public class UsuarioMgrImpl implements UsuarioMgr{
 	}
 
 	
-	@Override
-	public String prueba() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	
 }

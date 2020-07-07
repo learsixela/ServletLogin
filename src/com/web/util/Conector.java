@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class Conector {
 
 	private String sServidor = "localhost";
-	private String sUsuario = "israel";
-	private String sPassword = "secret";
+	private String sUsuario = "eduardo";
+	private String sPassword = "";
 	private int iPuerto = 3306;
 	private String sServer = "";
 	private String sBaseDatos = "";

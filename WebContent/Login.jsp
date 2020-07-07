@@ -5,9 +5,13 @@
 <body class="bg-info">
 	<!-- editando vista -->
 	<main>
+	<div class="fondo-login">
+
 		<div class="container">
+			<h1>LOGEARSE A LA MEJOR PLATAFORMA DEL MUNDO</h1>
 			<div class="row vh-100">
 				<div class="col-md-4 mx-auto d-flex align-items-center">
+				
 					<div class="card bg-light mb-3 shadow-lg">
 						<div class="card-header">Login</div>
 						<div class="card-body">
@@ -20,13 +24,14 @@
 										<label for="">Password:</label>
 									<input type="password" value="" name="password" id="password"
 										required="required" class="form-control" placeholder="Ingrese Password"><br>
-									<button class="btn btn-primary float-right" type="submit">Login</button>
+									<a href="Login.jsp" class="btn btn-primary">Login</a>
 								</div>
 							</form>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 	</main>
 
