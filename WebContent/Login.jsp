@@ -15,12 +15,15 @@
 					<div class="card bg-light mb-3 shadow-lg">
 						<div class="card-header">Login</div>
 						<div class="card-body">
+							<c:if test="${not empty mensaje}">
+							      <div class="alert alert-info">${mensaje.getsMensaje()}</div>
+							 </c:if>
 							<form action="Login" method="POST">
 								<div class="form-group">
-									<label for="">Nombre:</label> 
+									<label for="">Email:</label> 
 									<input type="text" value=""
-										name="nombre" id="nombre" required="required"
-										class="form-control" placeholder="Ingrese Nombre"> <br> 
+										name="email" id="email" required="required"
+										class="form-control" placeholder="Ingrese Email"> <br> 
 										<label for="">Password:</label>
 									<input type="password" value="" name="password" id="password"
 										required="required" class="form-control" placeholder="Ingrese Password"><br>

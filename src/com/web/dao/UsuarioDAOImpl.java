@@ -58,8 +58,8 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 	@Override
 	public Usuario exist(Usuario user) {
 		Usuario usuario = null;
-		 String query = "SELECT id,nombre,rut,email,pass FROM usuario WHERE nombre ='"
-		 		+ user.getsNombre() +"' AND pass = '"+user.getsPassword()+"' ";
+		 String query = "SELECT id,nombre,rut,email,pass FROM usuario WHERE email ='"
+		 		+ user.getsEmail() +"' AND pass = '"+user.getsPassword()+"' ";
 		 //System.out.println("Query: " + query);
 	        try {
 	            con=cn.getConnection();

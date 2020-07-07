@@ -39,7 +39,7 @@ public class UsuarioMgrImpl implements UsuarioMgr{
 		
 		Usuario usuario = null;
 		//validaciones 
-		if(!user.getsNombre().trim().equals("")) {
+		if(!user.getsEmail().trim().equals("")) {
 			if(!user.getsPassword().trim().equals("")) {
 				//llamando al metodo del DAO
 				usuario= dao.exist(user);
