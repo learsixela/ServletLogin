@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
+import com.web.model.Mensaje;
 import com.web.model.Usuario;
 
 import com.web.util.Conexion;
@@ -18,6 +19,7 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 	ResultSet resul ;
 
 	Usuario usuario = new Usuario();
+	Mensaje mensaje = new Mensaje();
 	
 	//constructor vacio
 	public UsuarioDAOImpl() {
@@ -25,8 +27,8 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 	}
 
 	@Override
-	public String add(Usuario user) {
-		String  mensaje ="";
+	public Mensaje add(Usuario user) {
+		
         String query = "INSERT INTO usuario (nombre,rut,email,pass) VALUES ( '"+ 
         		user.getsNombre()+  "' , '" +
         		user.getsRut() + "' , '" +
@@ -39,14 +41,15 @@ public class UsuarioDAOImpl implements UsuarioDAO{
             stmt=con.prepareStatement(query);
             int resultado = stmt.executeUpdate(query);
             if(resultado == 1) {
-            	mensaje = "Usuario agregado con exito";
+            	mensaje.setsMensaje("Usuario agregado con exito");
             }else {
-            	mensaje = "Error al registrar usuario";
+            	mensaje.setsMensaje("Error al registrar usuario");
+            	mensaje.setiEstado(0);
             }
             
         } catch (SQLException e) {
-        	mensaje = "Error al ejecutar la consulta: "+ query;
-			System.out.println("Error al ejecutar la consulta: "+ query);
+        	mensaje.setsMensaje("Error al ejecutar la consulta: "+ query);
+        	mensaje.setiEstado(0);
 		}
         
 		return mensaje;

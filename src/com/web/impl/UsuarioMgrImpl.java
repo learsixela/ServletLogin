@@ -1,28 +1,35 @@
 package com.web.impl;
 
 import com.web.dao.UsuarioDAOImpl;
+import com.web.model.Mensaje;
 import com.web.model.Usuario;
 
 //logica de negocio
 public class UsuarioMgrImpl implements UsuarioMgr{
-	String sMensaje ="";
+	Mensaje mensaje = new Mensaje();
 	//metodos 
-	public String validarUser(Usuario user) {
+	public Mensaje validarUser(Usuario user) {
 		
 		UsuarioDAOImpl dao = new UsuarioDAOImpl();
-		String sMensaje ="";
-		//validaciones 
-		if(!user.getsNombre().trim().equals("")) {
-			if(!user.getsPassword().trim().equals("")) {
-				//llamar al metodo del DAO
-				sMensaje= dao.add(user);
+		//validaciones
+		if(!user.getsEmail().trim().equals("")) {
+			if(!user.getsNombre().trim().equals("")) {
+				if(!user.getsPassword().trim().equals("")) {
+					//llamar al metodo del DAO
+					mensaje = dao.add(user);
+				}else {
+	            	mensaje.setsMensaje("Debe ingresar password.");
+	            	mensaje.setiEstado(0);
+				}
 			}else {
-				sMensaje="Debe ingresar password.";
+            	mensaje.setsMensaje("Debe ingresar nombre de usuario.");
+            	mensaje.setiEstado(0);
 			}
 		}else {
-			sMensaje="Debe ingresar nombre de usuario";
-		}
-		return sMensaje;
+			mensaje.setsMensaje("Debe ingresar email de usuario.");
+        	mensaje.setiEstado(0);
+		}	
+		return mensaje;
 	}
 
 	@Override

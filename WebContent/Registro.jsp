@@ -10,16 +10,23 @@
 					<div class="card bg-light mb-3 shadow-lg">
 						<div class="card-header">Registrar Usuario</div>
 						<div class="card-body">
-							<form action="Registro" method="GET">
+						 <c:if test="${not empty mensaje}">
+						      <div class="alert alert-info">${mensaje.getsMensaje()}</div>
+						 </c:if>
+							<form action="Registro" method="POST">
 								<div class="form-group">
 									<label for="">Nombre:</label> 
 									<input type="text" value=""
 										name="nombre" id="nombre" required="required"
 										class="form-control" placeholder="Ingrese Nombre"><br>
+									<label for="">Email:</label> 
+									<input type="text" value=""
+										name="email" id="email"
+										class="form-control" placeholder="Ingrese Email"><br>	
 									<label for="">Rut:</label> 
 									<input type="text" value=""
-										name="rut" id="rut" required="required"
-										class="form-control" placeholder="Ingrese Password"><br>
+										name="rut" id="rut" 
+										class="form-control" placeholder="Ingrese RUT"><br>
 										<label for="">Password:</label> 
 										<input type="password" value=""
 										name="pass" id="pass" required="required"

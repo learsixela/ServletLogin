@@ -23,6 +23,7 @@ public class Usuario {
 		this.sPassword = sPassword;
 	}
 	
+	//get y set
 	public int getId() {
 		return id;
 	}
@@ -31,7 +32,6 @@ public class Usuario {
 		this.id = id;
 	}
 
-	//get y set
 	public String getsNombre() {
 		return sNombre;
 	}

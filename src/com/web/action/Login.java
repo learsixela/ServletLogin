@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.web.impl.UsuarioMgrImpl;
 import com.web.model.Usuario;
+import com.web.util.Mensajes;
 
 /**
  * Servlet implementation class Login
@@ -34,19 +35,19 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter salida = response.getWriter();
         //capturando lal variables que vienen desde el form login.jsp
-		String sNombre = request.getParameter("nombre");
+		String sEmail = request.getParameter("email");
 		String sPass = request.getParameter("password");
 		
 		//instancia del objeto
-		Usuario user1 = new Usuario();
-		user1.setsNombre(sNombre);
-		user1.setsPassword(sPass);
+		Usuario user = new Usuario();
+		user.setsEmail(sEmail);
+		user.setsPassword(sPass);
 		
 		//instancia a la clase mgrImpl
 		UsuarioMgrImpl mgrImpl = new UsuarioMgrImpl();
 		
 		//llamado al metodo
-		Usuario user = mgrImpl.exist(user1);
+		 user = mgrImpl.exist(user);
 		
 		if(user!= null) {
 			String idUsuario= user.getId()+"";
@@ -59,24 +60,13 @@ public class Login extends HttpServlet {
 	        // almacenando al informacion o parametro en sesion
 	        HttpSession session = request.getSession();
 	        session.setAttribute("nombre", user.getsNombre());
-	        session.setAttribute("rut", user.getsRut());
-	        session.setAttribute("pass", user.getsPassword());
+
 	        doGet(request, response);
 		}else {
-			mensajeSalida(salida,"<h1>Usuario no existente</h1>");
+			Mensajes msg = new Mensajes();
+			msg.mensajeSalida(salida,"<h1>Usuario no existente</h1>");
 		}
 		
-	}
-	
-	public PrintWriter mensajeSalida(PrintWriter salida, String mensaje) {
-        salida.println("<HTML><HEAD><TITLE>");
-	    salida.println("title");
-	    salida.println("</TITLE></HEAD><BODY>");
-        salida.println(mensaje);
-        salida.println("</BODY></HTML>");
-        salida.close();
-		
-		return salida;
 	}
 
 }
