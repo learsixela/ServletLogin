@@ -24,7 +24,8 @@
 										<label for="">Password:</label>
 									<input type="password" value="" name="password" id="password"
 										required="required" class="form-control" placeholder="Ingrese Password"><br>
-									<a href="Login.jsp" class="btn btn-primary">Login</a>
+										<a href="Registro.jsp" class="btn btn-primary">Registrarse</a>
+									<button class="btn btn-primary float-right" type="submit">Login</button>
 								</div>
 							</form>
 						</div>

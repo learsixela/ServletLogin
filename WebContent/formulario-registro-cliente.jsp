@@ -80,7 +80,7 @@
 								</div>
 							</div>
 							<hr>
-						
+							<a href="/home" class="btn btn-primary">Volver al home</a>
 							<button type="submit" class="btn btn-danger float-right">Registrar Cliente</button>
 							</div>
 						
