@@ -59,7 +59,7 @@ public class Login extends HttpServlet {
 		}else {
 			
 			mensaje.setiEstado(0);
-			mensaje.setsMensaje("Usuario no existente");
+			mensaje.setsMensaje("Usuario o contraseña incorrecta");
 			request.setAttribute("mensaje", mensaje);
 			RequestDispatcher view;
 			view = request.getRequestDispatcher("/Login.jsp");

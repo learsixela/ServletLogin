@@ -4,6 +4,7 @@
 </jsp:include>
 <body>
 	<main>
+	<div class="fondo-registro">
 		<div class="container">
 			<div class="row vh-100">
 				<div class="col-md-4 mx-auto d-flex align-items-center">

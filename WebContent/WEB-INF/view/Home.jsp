@@ -3,7 +3,7 @@
 <jsp:param name='description' value='Home' />
 </jsp:include>
 
-<div class="fondo-home">
+<div class="fondo-home"> 
 	
 <h1> Bienvenido al menu de Administracion </h1>
 
@@ -47,7 +47,7 @@
 
 
 
-
+</div>
 
 
 

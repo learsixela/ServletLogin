@@ -29,7 +29,7 @@ public class rClienteDAOImpl implements rClienteDAO {
 	@Override
 	public String add(Empresa userCliente) {
 		String  mensaje ="";
-        String query = "INSERT INTO usercliente (nombre,rut,giro,nombre_contacto,telefono,correo,region,ciudad,direccion) VALUES ( '"+ 
+        String query = "INSERT INTO cliente (nombre,rut,giro,nombre_contacto,telefono,correo,region,ciudad,direccion) VALUES ( '"+ 
         		 userCliente.getsNombreEmpresa()+  "' , '" +
         		 userCliente.getsRutEmpresa() + "' , '" +
         		 userCliente.getsGiroEmpresa() + "' , '" + 
