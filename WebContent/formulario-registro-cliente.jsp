@@ -8,6 +8,9 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="card text-white bg-secondary mb-3">
+					<c:if test="${not empty mensaje}">
+						<div class="alert alert-info">${mensaje.getsMensaje()}</div>
+					</c:if>
 					<div class="card-header">Formulario Registro de Cliente</div>
 					<div class="card-body">
 						<form action="RegistroClientes" method="POST">

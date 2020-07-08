@@ -1,29 +1,26 @@
 package com.web.model;
 
-public class Usuario {
+public class Trabajador {
 	//atributos del objeto
 	int id;
 	String sNombre;
 	String sEmail;
 	String sRut;
-	String sPassword;
+	int iEmpresaID;
 	
-	//constructor vacio
-	public Usuario() {
+	public Trabajador() {
 		
-	} 
+	}
 	
-	//constructor con parametros
-	public Usuario(int iId, String sNombre, String sEmail, String sRut, String sPassword) {
+	public Trabajador(int id, String sNombre, String sEmail, String sRut, int iEmpresaID) {
 		super();
-		this.id = iId;
+		this.id = id;
 		this.sNombre = sNombre;
 		this.sEmail = sEmail;
 		this.sRut = sRut;
-		this.sPassword = sPassword;
+		this.iEmpresaID = iEmpresaID;
 	}
-	
-	//get y set
+
 	public int getId() {
 		return id;
 	}
@@ -56,12 +53,13 @@ public class Usuario {
 		this.sRut = sRut;
 	}
 
-	public String getsPassword() {
-		return sPassword;
+	public int getiEmpresaID() {
+		return iEmpresaID;
 	}
 
-	public void setsPassword(String sPassword) {
-		this.sPassword = sPassword;
+	public void setiEmpresaID(int iEmpresaID) {
+		this.iEmpresaID = iEmpresaID;
 	}
-
+	
+	
 }

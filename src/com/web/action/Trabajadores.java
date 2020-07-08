@@ -4,22 +4,19 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.web.impl.UsuarioMgrImpl;
+import com.web.impl.TrabajadoresMgrImpl;
 import com.web.model.Mensaje;
-import com.web.model.Usuario;
+import com.web.model.Trabajador;
 
 /**
  * Servlet implementation class Registro
  */
-@WebServlet("/Registro")
-public class Registro extends HttpServlet {
+public class Trabajadores extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
 	Mensaje mensaje = new Mensaje();
 
 	/**
@@ -41,17 +38,16 @@ public class Registro extends HttpServlet {
         String sEmail = request.getParameter("email");
         
         //instacia al objeto usuario
-        Usuario user = new Usuario();
+        Trabajador trabajador = new Trabajador();
         //asigno al objeto las variables
-        user.setsNombre(sNombre);
-        user.setsRut(sRut);
-        user.setsPassword(sPass);
-        user.setsEmail(sEmail);
+        trabajador.setsNombre(sNombre);
+        trabajador.setsRut(sRut);
+        trabajador.setsEmail(sEmail);
         
         //instancia a las clases
-        UsuarioMgrImpl mgr = new UsuarioMgrImpl();
+        TrabajadoresMgrImpl trabajadores = new TrabajadoresMgrImpl();
         
-        mensaje =  mgr.validarUser(user);
+        mensaje =  trabajadores.agregarTrabajador(trabajador);
         
         request.setAttribute("mensaje", mensaje);
         

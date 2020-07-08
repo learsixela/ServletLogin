@@ -1,7 +1,6 @@
 package com.web.action;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,13 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.web.impl.UsuarioMgrImpl;
 import com.web.impl.rClienteMgrImpl;
 import com.web.model.Empresa;
-import com.web.model.Usuario;
-import com.web.util.Mensajes;
+import com.web.model.Mensaje;
 
 /**
  * Servlet implementation class Clientes
@@ -23,7 +19,7 @@ import com.web.util.Mensajes;
 @WebServlet("/RegistroClientes")
 public class RegistroClientes extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	Mensajes mensajeSalida = new Mensajes();
+	Mensaje mensaje = new Mensaje();
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -49,9 +45,6 @@ public class RegistroClientes extends HttpServlet {
 	        String sCiudad = request.getParameter("ciudad");
 	        String sDireccion = request.getParameter("direccion");
 	        
-        
-
-        
         //instacia al objeto usuario
         Empresa userCliente = new Empresa();
         //asigno al objeto las variables
@@ -64,28 +57,23 @@ public class RegistroClientes extends HttpServlet {
         userCliente.setsRegion(sRegion);
         userCliente.setsCiudad(sCiudad);
         userCliente.setsDireccion(sDireccion);
-        
-        
-        
-        
+
         //instancia a las clases
         
         rClienteMgrImpl mgr= new rClienteMgrImpl();
         
-  
-        
-        
         String sResultado=  mgr.validarUserCliente(userCliente);
         
-        PrintWriter salida = response.getWriter();
-  
-      
-        mensajeSalida.mensajeSalidaHome(response, salida, sResultado);
-        salida.close();
-		
-		
-		
-		
+        request.setAttribute("mensaje", sResultado);
+            
+        if(mensaje.getiEstado()==1) {
+        	//redireccionando
+        	response.sendRedirect("/MiServlet/Home");
+        }else {
+        	//redireccionando
+        	 RequestDispatcher view = request.getRequestDispatcher("/formulario_registro_cliente.jsp");
+    		// pasar request, y el response
+    		view.forward(request, response);
+        }
 	}
-
 }
