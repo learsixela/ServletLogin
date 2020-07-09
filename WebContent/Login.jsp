@@ -15,9 +15,9 @@
 					<div class="card bg-light mb-3 shadow-lg">
 						<div class="card-header">Login</div>
 						<div class="card-body">
-							<c:if test="${not empty mensaje}">
-							      <div class="alert alert-info">${mensaje.getsMensaje()}</div>
-							 </c:if>
+						<c:if test="${not empty mensaje}">
+						      <div class="alert alert-info">${mensaje.getsMensaje()}</div>
+						 </c:if>
 							<form action="Login" method="POST">
 								<div class="form-group">
 									<label for="">Email:</label> 

@@ -1,12 +1,10 @@
 package com.web.action;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +13,6 @@ import javax.servlet.http.HttpSession;
 import com.web.impl.UsuarioMgrImpl;
 import com.web.model.Mensaje;
 import com.web.model.Usuario;
-import com.web.util.Mensajes;
 
 /**
  * Servlet implementation class Login
@@ -50,7 +47,7 @@ public class Login extends HttpServlet {
 		
 		//llamado al metodo
 		 user = mgrImpl.exist(user);
-		if(user!= null) {
+ 		if(user!= null) {
 	        // almacenando al informacion o parametro en sesion
 	        HttpSession session = request.getSession();
 	        session.setAttribute("nombre", user.getsNombre());
