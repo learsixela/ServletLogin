@@ -57,7 +57,7 @@ public class Trabajadores extends HttpServlet {
         
         if(mensaje.getiEstado()==1) {
         	//redireccionando
-        	view = request.getRequestDispatcher("/Home.jsp");
+        	view = request.getRequestDispatcher("/WEB-INF/view/Home.jsp");
         }else {
         	//redireccionando
     		view = request.getRequestDispatcher("/Registro.jsp");

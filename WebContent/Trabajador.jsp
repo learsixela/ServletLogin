@@ -14,7 +14,7 @@
 					<div class="card-header">Formulario Registro de Cliente</div>
 					<div class="card-body">
 						<form action="Trabajadores" method="POST">
-						<div class="row">
+							<div class="row">
 								<div class="col-12 font-weight-bold">
 									<p>Datos Empresa:</p>
 								</div>
@@ -31,8 +31,8 @@
 										class="form-control" id="rut" name="rut"
 										placeholder="Ingrese Rut Trabajador">
 								</div>
-								
-									<div class="col-md-3">
+							
+								<div class="col-md-3">
 									<label for="email">Ingresar Email</label> <input type="text"
 										class="form-control" id="email" name="email"
 										placeholder="Ingrese email">
@@ -47,13 +47,12 @@
 					
 							<a href="/MiServlet/Home" class="btn btn-primary">Volver al home</a>
 							<button type="submit" class="btn btn-danger float-right">Registrar Trabajador</button>
-							</div>
-						
+						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+</div>
 	
 <%@ include file="template/footer.jsp"%>

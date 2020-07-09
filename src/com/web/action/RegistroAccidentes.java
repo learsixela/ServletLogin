@@ -1,7 +1,6 @@
 package com.web.action;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,14 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import com.web.impl.UsuarioMgrImpl;
 import com.web.impl.rAccidenteMgrImpl;
-import com.web.impl.rClienteMgrImpl;
-import com.web.model.Empresa;
 import com.web.model.RAccidentes;
-import com.web.model.Usuario;
-import com.web.util.Mensajes;
 
 
 /**
@@ -24,8 +17,7 @@ import com.web.util.Mensajes;
  */
 @WebServlet("/RegistroAccidentes")
 public class RegistroAccidentes extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	Mensajes mensajeSalida = new Mensajes();
+	private static final long serialVersionUID = 1L; 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -74,28 +66,17 @@ public class RegistroAccidentes extends HttpServlet {
       newAccidente.setsObsAc(sObsAC);
         
         //asigno al objeto las variables
-              
-        
-        
-        
+
         
         //instancia a las clases
         rAccidenteMgrImpl mgr= new rAccidenteMgrImpl();
       	
         
-        
-        
-        
-        
         String sResultado=  mgr.validarUsuarioAccidente(newAccidente);
         
-        PrintWriter salida = response.getWriter();
-  
-      
-        mensajeSalida.mensajeSalidaHome(response, salida, sResultado);
-        salida.close();
+        request.setAttribute("mensaje", sResultado);
 		
-		
+        response.sendRedirect("/MiServlet/Home");
 		
 		
 	}

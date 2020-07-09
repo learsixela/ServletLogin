@@ -33,16 +33,14 @@ public class TrabajadorDAOImpl implements TrabajadorDAO{
         		trabajador.getsRut() + "' , '" +
         		trabajador.getiEmpresaID() + "' )";
         
-        //comprobar que la query esta hecha correctamente
-        System.out.println("Query: " + query);
         try {
             con=cn.getConnection();
             stmt=con.prepareStatement(query);
             int resultado = stmt.executeUpdate(query);
             if(resultado == 1) {
-            	mensaje.setsMensaje("Usuario agregado con exito");
+            	mensaje.setsMensaje("Trabajador agregado con exito");
             }else {
-            	mensaje.setsMensaje("Error al registrar usuario");
+            	mensaje.setsMensaje("Error al registrar Trabajador");
             	mensaje.setiEstado(0);
             }
             

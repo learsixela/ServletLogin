@@ -52,11 +52,11 @@ public class Login extends HttpServlet {
 	        HttpSession session = request.getSession();
 	        session.setAttribute("nombre", user.getsNombre());
 
-	        response.sendRedirect("/MiServlet/Home");
+	        response.sendRedirect("/MiServlet/Inicio");
 		}else {
 			
 			mensaje.setiEstado(0);
-			mensaje.setsMensaje("Usuario o contraseña incorrecta");
+			mensaje.setsMensaje("Usuario o contraseÃ±a incorrecta");
 			request.setAttribute("mensaje", mensaje);
 			RequestDispatcher view;
 			view = request.getRequestDispatcher("/Login.jsp");

@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Home
+ * Servlet implementation class Inicio
  */
-
-@WebServlet("/Home")
-public class Home extends HttpServlet {
+@WebServlet("/Inicio")
+public class Inicio extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,7 +31,8 @@ public class Home extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 doGet(request, response);
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
