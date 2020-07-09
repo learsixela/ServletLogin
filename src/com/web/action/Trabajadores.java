@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +16,7 @@ import com.web.model.Trabajador;
 /**
  * Servlet implementation class Registro
  */
+@WebServlet("/Trabajadores")
 public class Trabajadores extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Mensaje mensaje = new Mensaje();
@@ -34,7 +36,7 @@ public class Trabajadores extends HttpServlet {
         //capturando el valor que pasan por url
         String sNombre = request.getParameter("nombre");
         String sRut = request.getParameter("rut");
-        String sPass = request.getParameter("pass");
+        String sEmpresa = request.getParameter("empresa");
         String sEmail = request.getParameter("email");
         
         //instacia al objeto usuario
@@ -43,7 +45,7 @@ public class Trabajadores extends HttpServlet {
         trabajador.setsNombre(sNombre);
         trabajador.setsRut(sRut);
         trabajador.setsEmail(sEmail);
-        
+        trabajador.setiEmpresaID(1);
         //instancia a las clases
         TrabajadoresMgrImpl trabajadores = new TrabajadoresMgrImpl();
         
@@ -55,7 +57,7 @@ public class Trabajadores extends HttpServlet {
         
         if(mensaje.getiEstado()==1) {
         	//redireccionando
-        	view = request.getRequestDispatcher("/Login.jsp");
+        	view = request.getRequestDispatcher("/Home.jsp");
         }else {
         	//redireccionando
     		view = request.getRequestDispatcher("/Registro.jsp");

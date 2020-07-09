@@ -22,7 +22,7 @@
   <div class="card-body">
     <h5 class="card-title">Registro de Colaborador</h5>
     <p class="card-text">Panel dinamico para poder ingresar un nuevo colaborador a la base de datos</p>
-<a href="Login.jsp" class="btn btn-warning float-right">Vamos!</a>
+<a href="Trabajador.jsp" class="btn btn-warning float-right">Vamos!</a>
   </div>
 </div>
 <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
